@@ -126,5 +126,5 @@ url = "/publications/"
 <li>Sven van der Meer, Eduard Grasa, Bernat Gastón, Micheal Crotty, Jason Barron, Victor Alvarez, Marc Suñe, John day; “<em><a href="http://ict-pristine.eu/wp-content/uploads/2013/12/Challenges-for-Managing-the-Disappearing-Network-%E2%80%93-beyond-SDN.pdf">Challenges for Managing the Disappearing Network – beyond SDN</a></em>” . PRISTINE Technical Report 2014-Sep-01, September 2014.</li>
 <li class="rtejustify">Yuefeng Wang, Flavio Esposito and John Day; “<em><a href="http://csr.bu.edu/rina/papers/BUCS-TR-2013-014.pdf">RINA: An architecture for policy-based dynamic service management</a></em>“. BU Technical Report BUCS-TR-2013-014, 2013.</li>
 <li>J. Small; “<a href="http://rina.tssg.org/docs/js-001.6-RINA_Threat_Analysis.pdf"><em>Threat analysis of Recursive InterNetwork Architecture&nbsp;Distributed IPC Facilities</em></a>“. BU Technical Report, 2011.</li>
-<li>J. Day; “<a href="/sites/default/files/LocIDSplit090309.pdf/">Why Loc-ID split isn’t the answer</a>“. BU Technical Report, 2009.</li>
+<li>J. Day; “<a href="/pouzin-society-v2/mirror/pouzinsociety.org/sites/default/files/LocIDSplit090309.pdf">Why Loc-ID split isn’t the answer</a>“. BU Technical Report, 2009.</li>
 </ul>

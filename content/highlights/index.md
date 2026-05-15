@@ -13,27 +13,27 @@ url = "/highlights/"
 </ul>
 <h3><strong>Tutorial slides</strong></h3>
 <ul>
-<li><a href="/tutorial-at-telefonica-premises-2018/">Tutorial at Telefonica (2018).</a></li>
-<li><a href="/tutorial-at-the-sdn-world-congress-2016/">Tutorial at the SDN World Congress 2016</a>.</li>
-<li><a href="/tutorial-at-the-3rd-rina-international-workshop-2016/">Tutorial at the 3rd International RINA Workshop (2016)</a>.</li>
-<li><a href="/tutorial-at-ieee-globecom-2014/">Tutorial at IEEE Globecom 2014</a>.</li>
-<li><a href="/tutorial-at-1st-rina-international-workshop-2013/">Tutorial at the 1st International RINA Workshop (2013)</a>.</li>
+<li><a href="/pouzin-society-v2/tutorial-at-telefonica-premises-2018/">Tutorial at Telefonica (2018).</a></li>
+<li><a href="/pouzin-society-v2/tutorial-at-the-sdn-world-congress-2016/">Tutorial at the SDN World Congress 2016</a>.</li>
+<li><a href="/pouzin-society-v2/tutorial-at-the-3rd-rina-international-workshop-2016/">Tutorial at the 3rd International RINA Workshop (2016)</a>.</li>
+<li><a href="/pouzin-society-v2/tutorial-at-ieee-globecom-2014/">Tutorial at IEEE Globecom 2014</a>.</li>
+<li><a href="/pouzin-society-v2/tutorial-at-1st-rina-international-workshop-2013/">Tutorial at the 1st International RINA Workshop (2013)</a>.</li>
 </ul>
 <h3><strong>Videos</strong></h3>
 <ul>
 <li><a href="https://tnc15.terena.org/web/media/archive/1A">Connected communities need strong foundations</a>&nbsp;Presented by John Day at TNC 2015, Porto, 2015 (starts at minute 34).</li>
 <li><strong>How to clean a slate</strong>. Presented by John Day at UPC, Barcelona, 2011</li>
 </ul>
-<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/CleanSlateBCN.mp4?_=1" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/mirror/pouzinsociety.org/wp-content/uploads/2023/11/CleanSlateBCN.mp4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>Back to the Future:&nbsp;A journey from science to craft.. and back?</strong>. Presented at the Future Internet Assembly, Budapest 2011.</li>
 </ul>
-<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4?_=2" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/mirror/pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>We got Trouble! The issues with the “TCP/IP” model</strong>. Presented at Waterford Institute of Technology, Waterford 2011.</li>
 </ul>
-<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4?_=3" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/mirror/pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>Stalking the Wiley Humunculus and other adventures in Network Management</strong>. Keynote speech at IEEE IM, Dublin 2011.</li>
 </ul>
-<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4?_=4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/mirror/pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>

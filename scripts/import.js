@@ -7,6 +7,7 @@ const projectRoot = process.cwd();
 const contentRoot = path.join(projectRoot, 'content');
 const staticRoot = path.join(projectRoot, 'static');
 const siteOrigin = 'https://pouzinsociety.org';
+const pagesBasePath = '/pouzin-society-v2';
 const seededAssets = [
   'https://pouzinsociety.org/wp-content/uploads/2023/10/psoc_logo_75-1.png',
   'https://pouzinsociety.org/wp-content/uploads/2023/10/slide-image-1.jpg',
@@ -48,10 +49,18 @@ function toLocalLink(href) {
       return slug ? `/categories/${slug}/` : '/categories/';
     }
     if (parsed.pathname === '/') return '/';
+    if (path.extname(parsed.pathname)) return parsed.pathname;
     return parsed.pathname.endsWith('/') ? parsed.pathname : `${parsed.pathname}/`;
   }
 
   return href;
+}
+
+function withPagesBasePath(urlPath) {
+  if (!urlPath || !urlPath.startsWith('/')) return urlPath;
+  if (urlPath === '/') return `${pagesBasePath}/`;
+  if (urlPath.startsWith(`${pagesBasePath}/`) || urlPath === pagesBasePath) return urlPath;
+  return `${pagesBasePath}${urlPath}`;
 }
 
 function localAssetPath(url) {
@@ -62,6 +71,9 @@ function localAssetPath(url) {
 
 function rewriteAssetUrl(url) {
   if (!url) return url;
+  if (url.startsWith(`${pagesBasePath}/mirror/`)) return url.replace(pagesBasePath, '');
+  if (url.startsWith('mirror/')) return `/${url}`;
+  if (url.startsWith('/mirror/')) return url;
   let parsed;
   try {
     parsed = new URL(url, siteOrigin);
@@ -70,10 +82,11 @@ function rewriteAssetUrl(url) {
   }
 
   const ext = path.extname(parsed.pathname).toLowerCase();
-  const isImage = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'].includes(ext);
   const isLocalHost = parsed.hostname === 'pouzinsociety.org' || parsed.hostname === 'psoc.i2cat.net';
+  const isImage = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'].includes(ext);
+  const isMirrorableAsset = isLocalHost && ext && !['.html', '.htm', '.php'].includes(ext);
 
-  if (!isImage || !isLocalHost) {
+  if (!isImage && !isMirrorableAsset) {
     return url;
   }
 
@@ -117,6 +130,19 @@ function rewriteEmbeddedMediaHtml(html) {
     .replace(/<iframe([^>]*)><\/iframe>/gi, '<figure class="media-card media-card-embed"><div class="media-card-body"><iframe$1></iframe></div></figure>');
 }
 
+function rewriteHtmlPaths(html) {
+  return html
+    .replace(/\b(src|poster)="\/(?!\/)([^"]+)"/gi, (_, attr, assetPath) => `${attr}="${withPagesBasePath(rewriteAssetUrl(`/${assetPath}`))}"`)
+    .replace(/\bhref="\/(?!\/)([^"]*)"/gi, (_, hrefPath) => {
+      const localHref = `/${hrefPath}`;
+      const rewrittenAsset = rewriteAssetUrl(localHref);
+      if (rewrittenAsset !== localHref) {
+        return `href="${withPagesBasePath(rewrittenAsset)}"`;
+      }
+      return `href="${withPagesBasePath(toLocalLink(localHref))}"`;
+    });
+}
+
 function seedSiteAssets() {
   seededAssets.forEach((assetUrl) => {
     rewriteAssetUrl(assetUrl);
@@ -148,6 +174,7 @@ function cleanContentHtml($root, url, type) {
   html = html.replace(/\u00a0/g, ' ');
   html = html.replace(/<!--\[if lt IE 9\]>.*?<!\[endif\]-->/gs, '');
   html = rewriteEmbeddedMediaHtml(html);
+  html = rewriteHtmlPaths(html);
 
   if (type === 'page' && html.replace(/<[^>]+>/g, '').trim() === 'TODO') {
     return '<p>This section acts as an overview page. Use the navigation menu to access the detailed material in this area.</p>';

@@ -1,23 +1,33 @@
 {{ $current := "" }}
 {{ $currentEntry := dict }}
 {{ range .Site.Menus.main }}
-  {{ if eq .URL $.RelPermalink }}
-    {{ if .Parent }}
-      {{ $current = .Parent }}
+  {{ $entry := . }}
+  {{ $entryPermalink := .URL }}
+  {{ with $entry.Page }}
+    {{ $entryPermalink = .RelPermalink }}
+  {{ end }}
+  {{ if eq $entryPermalink $.RelPermalink }}
+    {{ if $entry.Parent }}
+      {{ $current = $entry.Parent }}
       {{ range $.Site.Menus.main }}
         {{ if eq .Identifier $current }}{{ $currentEntry = . }}{{ end }}
       {{ end }}
     {{ else }}
-      {{ $current = .Identifier }}
-      {{ $currentEntry = . }}
+      {{ $current = $entry.Identifier }}
+      {{ $currentEntry = $entry }}
     {{ end }}
   {{ end }}
 {{ end }}
 {{ if not $current }}
   {{ range .Site.Menus.main }}
-    {{ if and .Identifier (hasPrefix $.RelPermalink .URL) }}
-      {{ $current = .Identifier }}
-      {{ $currentEntry = . }}
+    {{ $entry := . }}
+    {{ $entryPermalink := .URL }}
+    {{ with $entry.Page }}
+      {{ $entryPermalink = .RelPermalink }}
+    {{ end }}
+    {{ if and $entry.Identifier (hasPrefix $.RelPermalink $entryPermalink) }}
+      {{ $current = $entry.Identifier }}
+      {{ $currentEntry = $entry }}
     {{ end }}
   {{ end }}
 {{ end }}

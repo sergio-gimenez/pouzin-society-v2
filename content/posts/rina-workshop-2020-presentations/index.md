@@ -8,7 +8,7 @@ featured_image = "/mirror/psoc.i2cat.net/sites/default/files/field/image/IMG_042
 +++
 
 <p class="rtejustify">The presentations of the papers at the&nbsp;<a href="https://www.icin-conference.org/RINA.php#program">RINA Workshop</a><a href="https://www.icin-conference.org/rina-2020-program/">&nbsp;2020</a><a href="https://www.icin-conference.org/rina-2020-program/">&nbsp;</a>are now online!&nbsp;The event, which was co-located with the&nbsp;<a href="https://www.icin-conference.org/">ICIN 2020&nbsp;conference</a>, was well attended by approximately 40 people that contributed to a lively discussion. The workshop featured two&nbsp;keynotes – one the&nbsp;<a href="https://rinarmenia.com/">RINArmenia initiative</a>, and one on the&nbsp;<a href="https://www.2stic.nl/">2STIC project&nbsp;</a>–&nbsp;and a technical session with 6&nbsp;papers.</p>
-<p><img fetchpriority="high" decoding="async" src="/mirror/psoc.i2cat.net/sites/default/files/field/image/IMG_0426.jpg" alt="" width="4032" height="3024"></p>
+<p><img fetchpriority="high" decoding="async" src="/pouzin-society-v2/mirror/psoc.i2cat.net/sites/default/files/field/image/IMG_0426.jpg" alt="" width="4032" height="3024"></p>
 <h1>Keynotes</h1>
 <ul>
 <li><em><strong>RINArmenia status update</strong></em>,&nbsp;<em>by Annie Voskanian (RINArmenia CTO).</em></li>

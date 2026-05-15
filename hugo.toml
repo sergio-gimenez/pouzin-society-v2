@@ -34,173 +34,173 @@ image = '/mirror/pouzinsociety.org/wp-content/uploads/2023/10/slide-image-3.jpg'
 [[menu.main]]
 name = 'RINA Education'
 identifier = 'rina-education'
-url = '/rina-education/'
+pageRef = '/rina-education'
 weight = 10
 
 [[menu.main]]
 name = 'Highlights'
 identifier = 'highlights'
 parent = 'rina-education'
-url = '/highlights/'
+pageRef = '/highlights'
 weight = 11
 
 [[menu.main]]
 name = 'Tutorial at Telefonica premises (2018)'
 parent = 'highlights'
-url = '/tutorial-at-telefonica-premises-2018/'
+pageRef = '/tutorial-at-telefonica-premises-2018'
 weight = 12
 
 [[menu.main]]
 name = 'Tutorial at the SDN World Congress (2016)'
 parent = 'highlights'
-url = '/tutorial-at-the-sdn-world-congress-2016/'
+pageRef = '/tutorial-at-the-sdn-world-congress-2016'
 weight = 13
 
 [[menu.main]]
 name = 'Tutorial at IEEE Globecom (2014)'
 parent = 'highlights'
-url = '/tutorial-at-ieee-globecom-2014/'
+pageRef = '/tutorial-at-ieee-globecom-2014'
 weight = 14
 
 [[menu.main]]
 name = 'Tutorial at 1st RINA international workshop (2013)'
 parent = 'highlights'
-url = '/tutorial-at-1st-rina-international-workshop-2013/'
+pageRef = '/tutorial-at-1st-rina-international-workshop-2013'
 weight = 15
 
 [[menu.main]]
 name = 'Terminology'
 parent = 'rina-education'
-url = '/terminology/'
+pageRef = '/terminology'
 weight = 16
 
 [[menu.main]]
 name = 'Data transfer'
 parent = 'rina-education'
-url = '/data-transfer/'
+pageRef = '/data-transfer'
 weight = 17
 
 [[menu.main]]
 name = 'Multi-homing, mobility and routing'
 parent = 'rina-education'
-url = '/multi-homing-mobility-and-routing/'
+pageRef = '/multi-homing-mobility-and-routing'
 weight = 18
 
 [[menu.main]]
 name = 'Network and namespace management'
 parent = 'rina-education'
-url = '/network-and-namespace-management/'
+pageRef = '/network-and-namespace-management'
 weight = 19
 
 [[menu.main]]
 name = 'Resource Allocation and Congestion Control'
 parent = 'rina-education'
-url = '/resource-allocation-and-congestion-control/'
+pageRef = '/resource-allocation-and-congestion-control'
 weight = 20
 
 [[menu.main]]
 name = 'Security'
 parent = 'rina-education'
-url = '/security/'
+pageRef = '/security'
 weight = 21
 
 [[menu.main]]
 name = 'Research & Development'
 identifier = 'research-development'
-url = '/research-development/'
+pageRef = '/research-development'
 weight = 30
 
 [[menu.main]]
 name = 'Research results highlights'
 parent = 'research-development'
-url = '/research-results-highlights/'
+pageRef = '/research-results-highlights'
 weight = 31
 
 [[menu.main]]
 name = 'Publications'
 parent = 'research-development'
-url = '/publications/'
+pageRef = '/publications'
 weight = 32
 
 [[menu.main]]
 name = 'Research projects'
 parent = 'research-development'
-url = '/research-projects/'
+pageRef = '/research-projects'
 weight = 33
 
 [[menu.main]]
 name = 'Implementations'
 identifier = 'implementations'
-url = '/implementations/'
+pageRef = '/implementations'
 weight = 40
 
 [[menu.main]]
 name = 'IRATI'
 parent = 'implementations'
-url = '/irati/'
+pageRef = '/irati'
 weight = 41
 
 [[menu.main]]
 name = 'RINAsim'
 parent = 'implementations'
-url = '/rinasim/'
+pageRef = '/rinasim'
 weight = 42
 
 [[menu.main]]
 name = 'protoRINA'
 parent = 'implementations'
-url = '/implementations/protorina/'
+pageRef = '/implementations/protorina'
 weight = 43
 
 [[menu.main]]
 name = 'rlite'
 parent = 'implementations'
-url = '/rlite/'
+pageRef = '/rlite'
 weight = 44
 
 [[menu.main]]
 name = 'rinaisense'
 parent = 'implementations'
-url = '/rinaisense/'
+pageRef = '/rinaisense'
 weight = 45
 
 [[menu.main]]
 name = 'Blog'
 identifier = 'blog'
-url = '/posts/'
+pageRef = '/posts'
 weight = 50
 
 [[menu.main]]
 name = 'Community'
 identifier = 'community'
-url = '/community/'
+pageRef = '/community'
 weight = 60
 
 [[menu.main]]
 name = 'News & Events'
 parent = 'community'
-url = '/categories/news-events/'
+pageRef = '/categories/news-events'
 weight = 61
 
 [[menu.main]]
 name = 'Participate'
 parent = 'community'
-url = '/participate/'
+pageRef = '/participate'
 weight = 62
 
 [[menu.main]]
 name = 'Meetings'
 parent = 'community'
-url = '/meetings/'
+pageRef = '/meetings'
 weight = 63
 
 [[menu.main]]
 name = 'Participants'
 parent = 'community'
-url = '/participants/'
+pageRef = '/participants'
 weight = 64
 
 [[menu.main]]
 name = 'About PSOC'
-url = '/about-psoc/'
+pageRef = '/about-psoc'
 weight = 70

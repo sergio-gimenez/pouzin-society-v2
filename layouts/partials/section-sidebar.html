@@ -3,17 +3,17 @@
   <aside class="panel side-panel docs-sidebar">
     <p class="eyebrow">Section guide</p>
     {{ with $ctx.entry }}
-      <h2><a href="{{ .URL }}">{{ .Name }}</a></h2>
+      <h2><a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a></h2>
     {{ end }}
     {{ if $ctx.children }}
       <ul class="side-links docs-links">
         {{ range $ctx.children }}
           <li>
-            <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a>
+            <a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}"{{ with .Page }}{{ if eq $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ .Name }}</a>
             {{ if .HasChildren }}
               <ul class="docs-sublinks">
                 {{ range .Children }}
-                  <li><a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
+                  <li><a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}"{{ with .Page }}{{ if eq $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ .Name }}</a></li>
                 {{ end }}
               </ul>
             {{ end }}

@@ -1,7 +1,7 @@
 <article class="card panel post-card">
   {{ with .Params.featured_image }}
     <a class="card-image" href="{{ $.RelPermalink }}">
-      <img src="{{ . }}" alt="{{ $.Title }}">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
     </a>
   {{ end }}
   <div class="card-body">

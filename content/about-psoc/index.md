@@ -11,4 +11,4 @@ url = "/about-psoc/"
 <a href="mailto:modell@nea.com">Mike O’Dell</a>&nbsp;Founder and Chair</p>
 <p>Please send an email to&nbsp;<a href="mailto:info@pouzinsociety.org">info@pouzinsociety.org</a>&nbsp;to request more information.</p>
 <p><strong>Participants</strong></p>
-<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-54 size-full" src="/mirror/pouzinsociety.org/wp-content/uploads/2023/11/psoc-logos_0.png" alt="" width="1546" height="868" sizes="(max-width: 1546px) 100vw, 1546px"></p>
+<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-54 size-full" src="/pouzin-society-v2/mirror/pouzinsociety.org/wp-content/uploads/2023/11/psoc-logos_0.png" alt="" width="1546" height="868" sizes="(max-width: 1546px) 100vw, 1546px"></p>
