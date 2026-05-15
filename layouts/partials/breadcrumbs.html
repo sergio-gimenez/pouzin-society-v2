@@ -1,0 +1,14 @@
+{{ $ctx := partial "section-context.html" . }}
+<nav class="breadcrumbs" aria-label="Breadcrumbs">
+  <a href="/">Home</a>
+  {{ with $ctx.entry }}
+    {{ if ne $.RelPermalink .URL }}
+      <span>/</span>
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  {{ end }}
+  {{ if not .IsHome }}
+    <span>/</span>
+    <span>{{ .Title }}</span>
+  {{ end }}
+</nav>

@@ -1,0 +1,24 @@
+{{ $current := "" }}
+{{ $currentEntry := dict }}
+{{ range .Site.Menus.main }}
+  {{ if eq .URL $.RelPermalink }}
+    {{ if .Parent }}
+      {{ $current = .Parent }}
+      {{ range $.Site.Menus.main }}
+        {{ if eq .Identifier $current }}{{ $currentEntry = . }}{{ end }}
+      {{ end }}
+    {{ else }}
+      {{ $current = .Identifier }}
+      {{ $currentEntry = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not $current }}
+  {{ range .Site.Menus.main }}
+    {{ if and .Identifier (hasPrefix $.RelPermalink .URL) }}
+      {{ $current = .Identifier }}
+      {{ $currentEntry = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return (dict "identifier" $current "entry" $currentEntry "children" (where .Site.Menus.main "Parent" $current)) }}

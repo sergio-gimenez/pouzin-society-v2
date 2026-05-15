@@ -1,0 +1,27 @@
+{{ $ctx := partial "section-context.html" . }}
+{{ if $ctx.identifier }}
+  <aside class="panel side-panel docs-sidebar">
+    <p class="eyebrow">Section guide</p>
+    {{ with $ctx.entry }}
+      <h2><a href="{{ .URL }}">{{ .Name }}</a></h2>
+    {{ end }}
+    {{ if $ctx.children }}
+      <ul class="side-links docs-links">
+        {{ range $ctx.children }}
+          <li>
+            <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a>
+            {{ if .HasChildren }}
+              <ul class="docs-sublinks">
+                {{ range .Children }}
+                  <li><a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p class="sidebar-note">This page belongs to a top-level archive section. Use the main navigation to jump across the site.</p>
+    {{ end }}
+  </aside>
+{{ end }}

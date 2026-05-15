@@ -1,6 +1,7 @@
 {{ define "main" }}
   <article class="content-grid single-grid">
-    <section class="panel panel-wide article-panel">
+    <section class="panel panel-wide article-panel article-panel-hero">
+      {{ partial "breadcrumbs.html" . }}
       <p class="eyebrow">{{ if eq .Section "posts" }}Post{{ else }}Page{{ end }}</p>
       <h1>{{ .Title }}</h1>
       {{ if eq .Section "posts" }}
@@ -9,28 +10,17 @@
           {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
           {{ with .Params.categories }}<span>{{ delimit . ", " }}</span>{{ end }}
         </div>
+      {{ else if .Description }}
+        <p class="section-intro">{{ .Description }}</p>
       {{ end }}
+    </section>
+
+    <section class="panel panel-wide article-panel">
       <div class="rich-content">
         {{ .Content }}
       </div>
     </section>
 
-    {{ $current := "" }}
-    {{ range .Site.Menus.main }}
-      {{ if eq .URL $.RelPermalink }}{{ $current = .Identifier }}{{ end }}
-    {{ end }}
-    {{ if $current }}
-      {{ $children := where .Site.Menus.main "Parent" $current }}
-      {{ if $children }}
-        <aside class="panel side-panel">
-          <p class="eyebrow">In this section</p>
-          <ul class="side-links">
-            {{ range $children }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-            {{ end }}
-          </ul>
-        </aside>
-      {{ end }}
-    {{ end }}
+    {{ partial "section-sidebar.html" . }}
   </article>
 {{ end }}

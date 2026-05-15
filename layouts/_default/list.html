@@ -1,21 +1,26 @@
 {{ define "main" }}
-  <section class="listing-section">
-    <div class="section-heading">
+  <article class="content-grid single-grid">
+    <section class="panel panel-wide article-panel article-panel-hero">
+      {{ partial "breadcrumbs.html" . }}
       <p class="eyebrow">Archive</p>
       <h1>{{ .Title }}</h1>
-      {{ with .Content }}<div class="rich-content">{{ . }}</div>{{ end }}
-    </div>
-    <div class="card-grid">
-      {{ range .Pages }}
-        {{ if eq .Section "posts" }}
-          {{ partial "post-card.html" . }}
-        {{ else }}
-          <article class="card panel">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
-          </article>
+      {{ with .Content }}<div class="rich-content section-intro">{{ . }}</div>{{ end }}
+    </section>
+    <section class="panel panel-wide listing-panel">
+      <div class="card-grid">
+        {{ range .Pages }}
+          {{ if eq .Section "posts" }}
+            {{ partial "post-card.html" . }}
+          {{ else }}
+            <article class="card panel section-list-card">
+              <p class="eyebrow">Reference page</p>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
+            </article>
+          {{ end }}
         {{ end }}
-      {{ end }}
-    </div>
-  </section>
+      </div>
+    </section>
+    {{ partial "section-sidebar.html" . }}
+  </article>
 {{ end }}
