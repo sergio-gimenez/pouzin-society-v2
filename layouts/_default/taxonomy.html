@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <article class="content-grid single-grid">
+    <section class="panel panel-wide article-panel article-panel-hero">
+      {{ partial "breadcrumbs.html" . }}
+      <p class="eyebrow">Category</p>
+      <h1>{{ .Title }}</h1>
+      <p class="section-intro">{{ partial "term-description.html" . }}</p>
+    </section>
+    <section class="panel panel-wide listing-panel">
+      <div class="listing-toolbar">
+        <div>
+          <p class="eyebrow">Collection</p>
+          <h2>{{ len .Pages }} entries</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+        {{ range .Pages }}
+          {{ partial "post-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  </article>
+{{ end }}

@@ -2,9 +2,15 @@
   <article class="content-grid single-grid">
     <section class="panel panel-wide article-panel article-panel-hero">
       {{ partial "breadcrumbs.html" . }}
-      <p class="eyebrow">Archive</p>
+      <p class="eyebrow">{{ if eq .Kind "term" }}Category{{ else }}Archive{{ end }}</p>
       <h1>{{ .Title }}</h1>
-      {{ with .Content }}<div class="rich-content section-intro">{{ . }}</div>{{ end }}
+      {{ with .Content }}
+        <div class="rich-content section-intro">{{ . }}</div>
+      {{ else }}
+        {{ if eq .Kind "term" }}
+          <p class="section-intro">{{ partial "term-description.html" . }}</p>
+        {{ end }}
+      {{ end }}
     </section>
     <section class="panel panel-wide listing-panel">
       <div class="listing-toolbar">

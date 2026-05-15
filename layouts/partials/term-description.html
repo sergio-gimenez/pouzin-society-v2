@@ -1,0 +1,10 @@
+{{ $title := .Title }}
+{{ if eq $title "Blog" }}
+  Posts with opinion pieces, broader commentary, and long-form reflections around RINA and network architecture.
+{{ else if eq $title "News & Events" }}
+  Event announcements, workshop material, presentations, and community updates from the Pouzin Society archive.
+{{ else if eq $title "Uncategorized" }}
+  Imported entries that were not clearly mapped to a maintained content category on the legacy site.
+{{ else }}
+  Archived material grouped under {{ lower $title }}.
+{{ end }}

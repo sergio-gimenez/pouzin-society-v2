@@ -371,6 +371,18 @@ img {
   min-height: 200px;
 }
 
+.taxonomy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+.taxonomy-card h2,
+.taxonomy-card p {
+  margin: 0;
+}
+
 .mission-panel {
   background:
     radial-gradient(circle at top right, rgba(111, 195, 255, 0.14), transparent 30%),
