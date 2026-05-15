@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="{{ "" | relURL }}">
-      <img src="{{ .Site.Params.logo | relURL }}" alt="Pouzin Society logo">
+      <img src="{{ strings.TrimPrefix "/" .Site.Params.logo | absURL }}" alt="Pouzin Society logo">
       <span>
         <strong>{{ .Site.Title }}</strong>
         <small>{{ .Site.Params.tagline }}</small>
@@ -11,20 +11,29 @@
       <ul>
         {{ range .Site.Menus.main }}
         {{ if not .Parent }}
+          {{ $entry := . }}
+          {{ $entryLink := $entry.URL }}
+          {{ with $entry.Page }}{{ $entryLink = .RelPermalink }}{{ end }}
           <li>
-            {{ if .HasChildren }}
+            {{ if $entry.HasChildren }}
               <details class="nav-group">
-                <summary{{ with .Page }}{{ if hasPrefix $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ .Name }}</summary>
+                <summary{{ with $entry.Page }}{{ if hasPrefix $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ $entry.Name }}</summary>
                 <div class="nav-panel">
-                  <a class="nav-overview" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}">Overview</a>
+                  <a class="nav-overview" href="{{ $entryLink }}">Overview</a>
                   <ul class="nav-children">
-                    {{ range .Children }}
+                    {{ range $entry.Children }}
+                      {{ $child := . }}
+                      {{ $childLink := $child.URL }}
+                      {{ with $child.Page }}{{ $childLink = .RelPermalink }}{{ end }}
                       <li>
-                        <a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a>
-                        {{ if .HasChildren }}
+                        <a href="{{ $childLink }}">{{ $child.Name }}</a>
+                        {{ if $child.HasChildren }}
                           <ul class="nav-grandchildren">
-                            {{ range .Children }}
-                              <li><a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}">{{ .Name }}</a></li>
+                            {{ range $child.Children }}
+                              {{ $grandchild := . }}
+                              {{ $grandchildLink := $grandchild.URL }}
+                              {{ with $grandchild.Page }}{{ $grandchildLink = .RelPermalink }}{{ end }}
+                              <li><a href="{{ $grandchildLink }}">{{ $grandchild.Name }}</a></li>
                             {{ end }}
                           </ul>
                         {{ end }}
@@ -34,7 +43,7 @@
                 </div>
               </details>
             {{ else }}
-              <a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}"{{ with .Page }}{{ if eq $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ .Name }}</a>
+              <a href="{{ $entryLink }}"{{ with $entry.Page }}{{ if eq $.RelPermalink .RelPermalink }} class="active"{{ end }}{{ end }}>{{ $entry.Name }}</a>
             {{ end }}
           </li>
           {{ end }}

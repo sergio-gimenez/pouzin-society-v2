@@ -149,7 +149,7 @@ weight = 42
 [[menu.main]]
 name = 'protoRINA'
 parent = 'implementations'
-pageRef = '/implementations/protorina'
+url = '/implementations/protorina/'
 weight = 43
 
 [[menu.main]]
@@ -179,7 +179,7 @@ weight = 60
 [[menu.main]]
 name = 'News & Events'
 parent = 'community'
-pageRef = '/categories/news-events'
+url = '/categories/news-events/'
 weight = 61
 
 [[menu.main]]
