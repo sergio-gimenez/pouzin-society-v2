@@ -1,7 +1,7 @@
 {
   "name": "pouzin-society-v2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static Hugo rebuild of the Pouzin Society website",
   "main": "index.js",
   "scripts": {
     "import": "node scripts/import.js",
