@@ -89,6 +89,34 @@ function rewriteAssetUrl(url) {
   return `/${path.relative(staticRoot, filePath).split(path.sep).join('/')}`;
 }
 
+function rewriteMediaUrl(url) {
+  if (!url) return url;
+  const rawUrl = url;
+  let parsed;
+  try {
+    parsed = new URL(url, siteOrigin);
+  } catch {
+    return url;
+  }
+
+  const ext = path.extname(parsed.pathname).toLowerCase();
+  const isMedia = ['.mp4', '.webm', '.mov', '.m4v'].includes(ext);
+  if (!isMedia) return url;
+
+  // Keep large legacy videos remote for now. Avoid giant local copies.
+  if (/^https?:\/\//i.test(rawUrl)) return rawUrl;
+  return parsed.toString();
+}
+
+function rewriteEmbeddedMediaHtml(html) {
+  const videoCard = (src) => `<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="${rewriteMediaUrl(src)}" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>`;
+
+  return html
+    .replace(/<div[^>]*class="[^"]*wp-video[^"]*"[^>]*>[\s\S]*?<source[^>]*src="([^"]+)"[^>]*>[\s\S]*?<\/div>/gi, (_, src) => videoCard(src))
+    .replace(/<video[^>]*>[\s\S]*?<source[^>]*src="([^"]+)"[^>]*>[\s\S]*?<\/video>/gi, (_, src) => videoCard(src))
+    .replace(/<iframe([^>]*)><\/iframe>/gi, '<figure class="media-card media-card-embed"><div class="media-card-body"><iframe$1></iframe></div></figure>');
+}
+
 function seedSiteAssets() {
   seededAssets.forEach((assetUrl) => {
     rewriteAssetUrl(assetUrl);
@@ -106,7 +134,7 @@ function cleanContentHtml($root, url, type) {
     const srcset = $element.attr('srcset');
 
     if (href) $element.attr('href', toLocalLink(href));
-    if (src) $element.attr('src', rewriteAssetUrl(src));
+    if (src) $element.attr('src', rewriteAssetUrl(rewriteMediaUrl(src)));
     if (poster) $element.attr('poster', rewriteAssetUrl(poster));
     if (srcset) $element.removeAttr('srcset');
 
@@ -118,6 +146,8 @@ function cleanContentHtml($root, url, type) {
 
   let html = $root.html() || '';
   html = html.replace(/\u00a0/g, ' ');
+  html = html.replace(/<!--\[if lt IE 9\]>.*?<!\[endif\]-->/gs, '');
+  html = rewriteEmbeddedMediaHtml(html);
 
   if (type === 'page' && html.replace(/<[^>]+>/g, '').trim() === 'TODO') {
     return '<p>This section acts as an overview page. Use the navigation menu to access the detailed material in this area.</p>';

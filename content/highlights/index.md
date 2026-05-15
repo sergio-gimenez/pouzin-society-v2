@@ -24,17 +24,16 @@ url = "/highlights/"
 <li><a href="https://tnc15.terena.org/web/media/archive/1A">Connected communities need strong foundations</a>&nbsp;Presented by John Day at TNC 2015, Porto, 2015 (starts at minute 34).</li>
 <li><strong>How to clean a slate</strong>. Presented by John Day at UPC, Barcelona, 2011</li>
 </ul>
-<div style="width: 840px;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
-<video class="wp-video-shortcode" id="video-64-1" width="840" height="526" preload="metadata" controls="controls"><source type="video/mp4" src="https://pouzinsociety.org/wp-content/uploads/2023/11/CleanSlateBCN.mp4?_=1"><a href="/wp-content/uploads/2023/11/CleanSlateBCN.mp4/">https://pouzinsociety.org/wp-content/uploads/2023/11/CleanSlateBCN.mp4</a></video></div>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/CleanSlateBCN.mp4?_=1" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>Back to the Future:&nbsp;A journey from science to craft.. and back?</strong>. Presented at the Future Internet Assembly, Budapest 2011.</li>
 </ul>
-<div style="width: 840px;" class="wp-video"><video class="wp-video-shortcode" id="video-64-2" width="840" height="526" preload="metadata" controls="controls"><source type="video/mp4" src="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4?_=2"><a href="/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4/">https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4</a></video></div>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Back-To-The-Future.mp4?_=2" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>We got Trouble! The issues with the “TCP/IP” model</strong>. Presented at Waterford Institute of Technology, Waterford 2011.</li>
 </ul>
-<div style="width: 840px;" class="wp-video"><video class="wp-video-shortcode" id="video-64-3" width="840" height="526" preload="metadata" controls="controls"><source type="video/mp4" src="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4?_=3"><a href="/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4/">https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4</a></video></div>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-WeGotTrouble_0.mp4?_=3" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>
 <ul>
 <li><strong>Stalking the Wiley Humunculus and other adventures in Network Management</strong>. Keynote speech at IEEE IM, Dublin 2011.</li>
 </ul>
-<div style="width: 840px;" class="wp-video"><video class="wp-video-shortcode" id="video-64-4" width="840" height="526" preload="metadata" controls="controls"><source type="video/mp4" src="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4?_=4"><a href="/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4/">https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4</a></video></div>
+<figure class="media-card media-card-video"><div class="media-card-body"><p class="eyebrow">External video</p><a class="card-cta" href="https://pouzinsociety.org/wp-content/uploads/2023/11/JohnDay-Management-IM2011_0.mp4?_=4" target="_blank" rel="noreferrer">Open video in new tab</a><p class="media-card-note">Large legacy video left on remote host to keep local site lightweight.</p></div></figure>

@@ -682,6 +682,28 @@ img {
   border-radius: 20px;
 }
 
+.media-card {
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(14, 90, 167, 0.06), rgba(255, 255, 255, 0.95));
+  border: 1px solid rgba(14, 90, 167, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.media-card-body {
+  display: grid;
+  gap: 12px;
+}
+
+.media-card-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.media-card-embed iframe {
+  margin: 0;
+}
+
 .rich-content .wp-video {
   width: 100% !important;
   max-width: 100% !important;
