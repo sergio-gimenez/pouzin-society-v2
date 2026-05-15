@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <article class="content-grid single-grid">
+    <section class="panel panel-wide article-panel">
+      <p class="eyebrow">{{ if eq .Section "posts" }}Post{{ else }}Page{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ if eq .Section "posts" }}
+        <div class="meta-row">
+          {{ with .Date }}<span>{{ .Format "Jan 2, 2006" }}</span>{{ end }}
+          {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+          {{ with .Params.categories }}<span>{{ delimit . ", " }}</span>{{ end }}
+        </div>
+      {{ end }}
+      <div class="rich-content">
+        {{ .Content }}
+      </div>
+    </section>
+
+    {{ $current := "" }}
+    {{ range .Site.Menus.main }}
+      {{ if eq .URL $.RelPermalink }}{{ $current = .Identifier }}{{ end }}
+    {{ end }}
+    {{ if $current }}
+      {{ $children := where .Site.Menus.main "Parent" $current }}
+      {{ if $children }}
+        <aside class="panel side-panel">
+          <p class="eyebrow">In this section</p>
+          <ul class="side-links">
+            {{ range $children }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </aside>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}

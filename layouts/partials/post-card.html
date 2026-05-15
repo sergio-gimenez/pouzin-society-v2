@@ -1,0 +1,12 @@
+<article class="card panel post-card">
+  {{ with .Params.featured_image }}
+    <a class="card-image" href="{{ $.RelPermalink }}">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </a>
+  {{ end }}
+  <div class="card-body">
+    <p class="eyebrow">{{ with .Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</p>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 220 }}{{ end }}</p>
+  </div>
+</article>

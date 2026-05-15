@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="listing-section">
+    <div class="section-heading">
+      <p class="eyebrow">Archive</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="rich-content">{{ . }}</div>{{ end }}
+    </div>
+    <div class="card-grid">
+      {{ range .Pages }}
+        {{ if eq .Section "posts" }}
+          {{ partial "post-card.html" . }}
+        {{ else }}
+          <article class="card panel">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}</p>
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

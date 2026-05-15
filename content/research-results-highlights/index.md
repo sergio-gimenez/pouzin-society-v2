@@ -1,0 +1,22 @@
++++
+title = "Research results highlights"
+url = "/research-results-highlights/"
++++
+
+<p><a href="/"><strong>Dynamic and seamless network renumbering</strong></a>.&nbsp;All the layers in a network can be renumbered simultaneously without impacting running traffic. Renumbering is a fully automated procedure that does not require human intervantion. Use cases include network consolidation, network optimization or distributed mobility management.&nbsp;<em><a href="/">Learn more!</a></em></p>
+<hr>
+<p><a href="/distributed-mobility-management-without-tunnels-or-specialized-protocols/"><strong>Distributed Mobility Management without tunnels or specialized protocols</strong></a>.&nbsp;Mobility&nbsp;is supported just using the tools the network architecture provides: a complete naming and addressing architecture and&nbsp;a set of recursive layers to accomodate the load, sclae and rate of change of mobile&nbsp;terminals.&nbsp;<a href="/distributed-mobility-management-without-tunnels-or-specialized-protocols/"><em>Learn more!</em></a></p>
+<hr>
+<p><a href="/more-effective-security-at-a-lower-cost/"><strong>More effective security at a lower cost</strong></a>.&nbsp;RINA networks are inherently more secure than current IP-based networks, at the same time require significantly less security protocols, mechanims and policies to do the job. Securing layers instead of protocols and&nbsp;a complete addressing architecture are part of the rationale.&nbsp;<a href="/more-effective-security-at-a-lower-cost/"><em>Learn more!</em></a></p>
+<hr>
+<p><a href="/congestion-management/"><strong>More predictable and sophisticated network management</strong></a>.&nbsp;Due to its minimal structure featuring a single repeating layer with common protocol frameworks and a single management protocol, RINA networks are significantly easier to manage. Closed-loop management becomes more effective, enabling greater automation levels.&nbsp;<a href="/congestion-management/"><em>Learn more!</em></a></p>
+<hr>
+<p><a href="/congestion/"><strong>Faster, adaptive, aggregate congestion control for better QoS and resource utilization.</strong></a>&nbsp;Congestion control can be applied closer to where congestion happens, minimizing the time to react. Congestion controllers can be customized per layer, dealing with aggregates of end-to-end flows at lower layers maximizing efficiency.<em>&nbsp;<a href="/congestion/">Learn more!</a></em></p>
+<hr>
+<p><a href="/programmability-achieved-by-separating-mechanism-from-policy/"><strong>Stop designing/coding protocols from scratch: support new use cases by designing and assembling policies</strong></a>.&nbsp;RINA allows network design to transition from devising new protocols to defining new policies for a reduced set of well-defined components. Programmability is thus enabled but its complexity is bounded.&nbsp;<a href="/programmability-achieved-by-separating-mechanism-from-policy/"><em>Learn more!</em></a></p>
+<hr>
+<p><strong><a href="/consistent-quality-of-service-model/">Consistent QoS model from the application&nbsp;to the phsyical medium</a></strong>.&nbsp;Layers expose information of its (IPC) service&nbsp;quality characteristics in a technology independent-way, with QoS cubes. Applications (including other layers) provide QoS requirements on each service request, which are mapped to the proper QoS cube.&nbsp;<a href="/consistent-quality-of-service-model/"><em>Learn more!</em></a></p>
+<hr>
+<p><a href="/application-discovery-across-layers-and-networks/"><strong>Application discovery across multiple layers and networks</strong></a>.&nbsp;RINA networks allow two applications to discover each other even if they do not share the same layer, via a distributed function called the DIF Allocator. This function also triggers the instantiation of a layer on demand, coordinating&nbsp;multiple peer network manager processes.&nbsp;<a href="/application-discovery-across-layers-and-networks/"><em>Learn more!</em></a></p>
+<hr>
+<p><a href="/multiple-adoption-scenarios-interoperating-with-legacy-technologies/"><strong>Multiple adoption/deployment options in brownfield scenarios</strong></a>.&nbsp;A greenfield environment is not necessary to start benefiting from RINA adoption. RINA layers can be deployed as an overlay to current network technologies, also in underlay configurations or sideways. Existing applications can be supported with sockets emulators.&nbsp;<a href="/multiple-adoption-scenarios-interoperating-with-legacy-technologies/"><em>Learn more!</em></a></p>

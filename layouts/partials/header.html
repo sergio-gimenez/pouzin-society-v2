@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="{{ .Site.Params.logo }}" alt="Pouzin Society logo">
+      <span>
+        <strong>{{ .Site.Title }}</strong>
+        <small>{{ .Site.Params.tagline }}</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        {{ range .Site.Menus.main }}
+        {{ if not .Parent }}
+          <li>
+            {{ if .HasChildren }}
+              <details class="nav-group">
+                <summary{{ if hasPrefix $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</summary>
+                <div class="nav-panel">
+                  <a class="nav-overview" href="{{ .URL }}">Overview</a>
+                  <ul class="nav-children">
+                    {{ range .Children }}
+                      <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                        {{ if .HasChildren }}
+                          <ul class="nav-grandchildren">
+                            {{ range .Children }}
+                              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                            {{ end }}
+                          </ul>
+                        {{ end }}
+                      </li>
+                    {{ end }}
+                  </ul>
+                </div>
+              </details>
+            {{ else }}
+              <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,102 @@
+{{ define "main" }}
+  <section class="home-hero">
+    {{ with index .Site.Params.hero 0 }}
+      <article class="hero-card hero-card-primary" style="background-image: linear-gradient(180deg, rgba(8, 20, 33, 0.28), rgba(8, 20, 33, 0.88)), url('{{ .image }}');">
+        <div>
+          <p class="eyebrow">Recursive InterNetwork Architecture</p>
+          <h1>{{ .title }}</h1>
+          <p>{{ .text }}</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="/rina-education/">Start with RINA Education</a>
+            <a class="button-secondary" href="/posts/">Browse recent updates</a>
+          </div>
+        </div>
+      </article>
+    {{ end }}
+
+    <div class="hero-side">
+      {{ range after 1 .Site.Params.hero }}
+        <article class="hero-card hero-card-compact" style="background-image: linear-gradient(180deg, rgba(8, 20, 33, 0.2), rgba(8, 20, 33, 0.82)), url('{{ .image }}');">
+          <div>
+            <p class="eyebrow">Pouzin Society</p>
+            <h2>{{ .title }}</h2>
+            <p>{{ .text }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="content-grid intro-grid">
+    <article class="panel panel-wide mission-panel">
+      <p class="eyebrow">Mission</p>
+      <h2>Open access to RINA knowledge</h2>
+      <p>This rebuilt site keeps the Pouzin Society material available in a simpler static format: education pages, research highlights, implementation notes, and community updates.</p>
+      <div class="mission-stats">
+        <div>
+          <strong>{{ len (where .Site.RegularPages "Section" "posts") }}</strong>
+          <span>archived posts</span>
+        </div>
+        <div>
+          <strong>{{ len (where .Site.RegularPages "Section" "!=" "posts") }}</strong>
+          <span>reference pages</span>
+        </div>
+        <div>
+          <strong>4</strong>
+          <span>main knowledge areas</span>
+        </div>
+      </div>
+    </article>
+    <article class="panel quick-links feature-panel">
+      <p class="eyebrow">Explore</p>
+      <h2>Fast paths into the archive</h2>
+      <ul>
+        <li><a href="/rina-education/">RINA Education</a></li>
+        <li><a href="/research-development/">Research &amp; Development</a></li>
+        <li><a href="/implementations/">Implementations</a></li>
+        <li><a href="/posts/">Latest Posts</a></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="listing-section">
+    <div class="section-heading">
+      <p class="eyebrow">Core sections</p>
+      <h2>Education, research, software, and community</h2>
+    </div>
+    <div class="section-grid">
+      <article class="section-card panel section-card-education">
+        <p class="eyebrow">Learn</p>
+        <h3><a href="/rina-education/">RINA Education</a></h3>
+        <p>Terminology, data transfer, mobility, naming, congestion control, and security foundations.</p>
+      </article>
+      <article class="section-card panel section-card-research">
+        <p class="eyebrow">Research</p>
+        <h3><a href="/research-development/">Research &amp; Development</a></h3>
+        <p>Highlights, publications, and project pages that explain how RINA work evolved in practice.</p>
+      </article>
+      <article class="section-card panel section-card-impl">
+        <p class="eyebrow">Build</p>
+        <h3><a href="/implementations/">Implementations</a></h3>
+        <p>IRATI, RINAsim, protoRINA, rlite, and related implementation efforts collected in one place.</p>
+      </article>
+      <article class="section-card panel section-card-community">
+        <p class="eyebrow">Connect</p>
+        <h3><a href="/community/">Community</a></h3>
+        <p>Meetings, participation information, participants, and community news around the ecosystem.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="listing-section">
+    <div class="section-heading">
+      <p class="eyebrow">Recent updates</p>
+      <h2>News, blog posts, and workshop material</h2>
+    </div>
+    <div class="card-grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
