@@ -7,6 +7,12 @@
       {{ with .Content }}<div class="rich-content section-intro">{{ . }}</div>{{ end }}
     </section>
     <section class="panel panel-wide listing-panel">
+      <div class="listing-toolbar">
+        <div>
+          <p class="eyebrow">Collection</p>
+          <h2>{{ len .Pages }} entries</h2>
+        </div>
+      </div>
       <div class="card-grid">
         {{ range .Pages }}
           {{ if eq .Section "posts" }}

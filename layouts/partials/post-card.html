@@ -5,8 +5,12 @@
     </a>
   {{ end }}
   <div class="card-body">
-    <p class="eyebrow">{{ with .Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</p>
+    <div class="card-meta-row">
+      <p class="eyebrow">{{ with .Date }}{{ .Format "Jan 2, 2006" }}{{ end }}</p>
+      {{ with .Params.categories }}<span class="card-tag">{{ index . 0 }}</span>{{ end }}
+    </div>
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 220 }}{{ end }}</p>
+    <a class="card-cta" href="{{ .RelPermalink }}">Read article</a>
   </div>
 </article>
